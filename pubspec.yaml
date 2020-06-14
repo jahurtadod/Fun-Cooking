@@ -37,7 +37,7 @@ dev_dependencies:
 
 flutter_icons:
   image_path: 'assets/iconsmall.png'
-  android: "launcher_icon"
+  android: true
   ios: true
 
 # For information on the generic Dart part of this file, see the
@@ -55,6 +55,10 @@ flutter:
   assets:
     - assets/funcooking.png
     - assets/iconsmall.png
+    - assets/avatar.png
+    - assets/img1.png
+    - assets/img2.png
+    - assets/img3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

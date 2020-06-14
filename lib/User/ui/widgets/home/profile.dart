@@ -5,16 +5,35 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
         children: <Widget>[
+          Positioned(
+            child: Container(
+              height: 50,
+              child: Image.asset('assets/avatar.png'),
+            ),
+          ),
+          Opacity(
+            opacity: 0.05,
+            child: Container(
+              padding: EdgeInsets.only(top: 8),
+              child: Text(
+                "FUN COOKING",
+                style: Theme.of(context).textTheme.headline3,
+                textAlign: TextAlign.end,
+              ),
+            ),
+          ),
           ListTile(
-            contentPadding: EdgeInsets.all(0.0),
-            leading: Container(
-                height: 60,
-                child: ClipOval(
-                  child: Image.asset('assets/iconsmall.png'),
-                )),
+            contentPadding: EdgeInsets.fromLTRB(22, 24, 16, 16),
+            leading: ClipOval(
+              child: Container(
+                color: Theme.of(context).colorScheme.primary,
+                height: 50,
+                width: 50,
+                child: Image.asset('assets/iconsmall.png'),
+              ),
+            ),
             title: Text(
               "Jorge Hurtado",
               maxLines: 1,
@@ -22,6 +41,7 @@ class Profile extends StatelessWidget {
               style: Theme.of(context).textTheme.headline6.copyWith(),
             ),
             subtitle: Container(
+              padding: EdgeInsets.only(top: 4),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
