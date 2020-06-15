@@ -29,7 +29,9 @@ class _HomeState extends State<Home> {
                   SelectMode(
                     text: "Juega",
                     img: "img1",
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/game');
+                    },
                     color: Theme.of(context).colorScheme.primary,
                     direction: true,
                   ),

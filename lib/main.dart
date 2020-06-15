@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fun_cooking/User/ui/screens/collection.dart';
+import 'package:fun_cooking/User/ui/screens/game.dart';
 import 'package:fun_cooking/User/ui/screens/home.dart';
 import 'package:fun_cooking/User/ui/screens/sign_in.dart';
 import 'package:fun_cooking/wrapper.dart';
@@ -59,13 +61,14 @@ class MyApp extends StatelessWidget {
         textTheme: textTheme,
         primarySwatch: Colors.blue,
         buttonColor: Color(0xFFF58850),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: '/sign_in',
       routes: {
         '/': (_) => Wrapper(),
         '/sign_in': (_) => SingIn(),
         '/home': (_) => Home(),
+        '/collection': (_) => Collection(),
+        '/game': (_) => GameCombine(),
       },
     );
   }
