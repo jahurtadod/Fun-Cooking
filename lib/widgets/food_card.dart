@@ -69,23 +69,26 @@ class FoodCard extends StatelessWidget {
               height: 100,
               width: 100,
               margin: EdgeInsets.only(top: 16),
-              child: Image.asset('assets/fresa.png'),
+              child: Hero(
+                tag: 'food',
+                child: Image.asset('assets/fresa.png'),
+              ),
             ),
           ),
-          Container(
-            height: 40,
-            width: 50,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10),
-                bottomRight: Radius.circular(10),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed('/info_food');
+            },
+            child: Container(
+              height: 40,
+              width: 50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(10),
+                ),
+                color: Colors.pink,
               ),
-              color: Colors.pink,
-            ),
-            child: GestureDetector(
-              onTap: () {
-                print("hola");
-              },
               child: Icon(
                 FontAwesomeIcons.plus,
                 color: Colors.white,

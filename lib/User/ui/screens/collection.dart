@@ -14,7 +14,6 @@ class _CollectionState extends State<Collection> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.primary,
           title: Text(
             "Colección",
             style: Theme.of(context).textTheme.headline6.copyWith(
@@ -35,8 +34,6 @@ class _CollectionState extends State<Collection> {
                     Wrap(
                       spacing: 10,
                       children: <Widget>[
-                        FoodCard(),
-                        FoodCard(),
                         FoodCard(),
                       ],
                     )

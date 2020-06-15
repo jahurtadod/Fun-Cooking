@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fun_cooking/User/ui/screens/collection.dart';
 import 'package:fun_cooking/User/ui/screens/game.dart';
 import 'package:fun_cooking/User/ui/screens/home.dart';
+import 'package:fun_cooking/User/ui/screens/info_food.dart';
 import 'package:fun_cooking/User/ui/screens/sign_in.dart';
 import 'package:fun_cooking/wrapper.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: colorScheme,
         textTheme: textTheme,
-        primarySwatch: Colors.blue,
+        primaryColor: Color(0xFF0E6097),
         buttonColor: Color(0xFFF58850),
       ),
       initialRoute: '/sign_in',
@@ -69,6 +70,7 @@ class MyApp extends StatelessWidget {
         '/home': (_) => Home(),
         '/collection': (_) => Collection(),
         '/game': (_) => GameCombine(),
+        '/info_food': (_) => InfoFood(),
       },
     );
   }
