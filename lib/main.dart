@@ -63,10 +63,10 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFF0E6097),
         buttonColor: Color(0xFFF58850),
       ),
-      initialRoute: '/sign_in',
+      initialRoute: '/',
       routes: {
-        '/': (_) => Wrapper(),
-        '/sign_in': (_) => SingIn(),
+        '/e': (_) => Wrapper(),
+        '/': (_) => SingIn(),
         '/home': (_) => Home(),
         '/collection': (_) => Collection(),
         '/game': (_) => GameCombine(),
