@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fun_cooking/User/ui/screens/home.dart';
+import 'package:fun_cooking/User/ui/screens/test.dart';
+
+import 'bloc/repository/sign_in_google.dart';
 
 class SingIn extends StatefulWidget {
   @override
@@ -50,8 +54,15 @@ class _SingInState extends State<SingIn> {
                       height: 40,
                       child: RaisedButton(
                         onPressed: () {
-                          // Connection Google
-                          Navigator.of(context).pushNamed('/home');
+                          signInWithGoogle().whenComplete(() {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return FirstScreen();
+                                },
+                              ),
+                            );
+                          });
                         },
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
