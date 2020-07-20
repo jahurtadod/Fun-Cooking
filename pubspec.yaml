@@ -36,7 +36,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter_icons:
-  image_path: 'assets/iconsmall.png'
+  image_path: 'assets/icon.png'
   android: true
   ios: true
 
@@ -61,6 +61,8 @@ flutter:
     - assets/img3.png
     - assets/fresa.png
     - assets/pot.png
+    - assets/logo.png
+    - assets/icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

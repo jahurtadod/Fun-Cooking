@@ -21,7 +21,7 @@ class _SingInState extends State<SingIn> {
               Spacer(),
               Container(
                 height: 200,
-                child: Image.asset('assets/funcooking.png'),
+                child: Image.asset('assets/logo.png'),
               ),
               Spacer(),
               Text(
