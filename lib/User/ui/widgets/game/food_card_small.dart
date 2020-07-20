@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 
 class FoodCardSmall extends StatelessWidget {
+  final String nameImg;
+  final Color color;
+
   const FoodCardSmall({
     Key key,
-  }) : super(key: key);
+    @required this.nameImg,
+    @required  this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color(0xFFFFE3E5),
+      color: this.color,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -19,7 +24,7 @@ class FoodCardSmall extends StatelessWidget {
           child: Container(
             height: 40,
             width: 40,
-            child: Image.asset('assets/fresa.png'),
+            child: Image.asset('assets/${this.nameImg}.png'),
           ),
         ),
       ),

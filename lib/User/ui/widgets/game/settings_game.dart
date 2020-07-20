@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'food_card_small.dart';
+
 class SettingGame extends StatelessWidget {
+  final Function(List<FoodCardSmall> ingredients) clean;
+
   const SettingGame({
-    Key key,
-  }) : super(key: key);
+    this.clean,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -60,16 +64,19 @@ class SettingGame extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              margin: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: Theme.of(context).colorScheme.primary,
+                borderRadius: BorderRadius.all(Radius.circular(50)),
+                color: Theme.of(context).colorScheme.secondary,
               ),
-              child: Center(
-                  child: Text(
-                "PREPARAR",
-                style: TextStyle(color: Colors.white),
-              )),
+              child: GestureDetector(
+                onTap: () {},
+                child: Center(
+                    child: Text(
+                  "PREPARAR",
+                  style: TextStyle(color: Colors.white),
+                )),
+              ),
             ),
           ),
         ],

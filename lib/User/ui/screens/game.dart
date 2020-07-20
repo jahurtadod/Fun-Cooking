@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:fun_cooking/User/model/temp_data_card.dart';
 import 'package:fun_cooking/User/ui/widgets/game/bottom_navigator_game.dart';
-import 'package:fun_cooking/User/ui/widgets/game/food_card_medium.dart';
+import 'package:fun_cooking/User/ui/widgets/game/draggable_food_card.dart';
 import 'package:fun_cooking/User/ui/widgets/game/food_card_small.dart';
 import 'package:fun_cooking/User/ui/widgets/game/nav_game.dart';
 import 'package:fun_cooking/User/ui/widgets/game/search_bar.dart';
 import 'package:fun_cooking/User/ui/widgets/game/settings_game.dart';
+import 'package:flutter/services.dart';
 
 class GameCombine extends StatefulWidget {
   @override
@@ -16,6 +18,8 @@ class _GameCombineState extends State<GameCombine> {
 
   @override
   Widget build(BuildContext context) {
+    // int count = 4;
+
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -42,23 +46,6 @@ class _GameCombineState extends State<GameCombine> {
                                 child:
                                     Center(child: Wrap(children: ingredients)),
                               ),
-                              // Container(
-                              //   height: 65,
-                              //   width: 60,
-                              //   padding: EdgeInsets.symmetric(horizontal: 16),
-                              //   child: ListView.separated(
-                              //     separatorBuilder: (_, index) {
-                              //       return Container(
-                              //         width: 10,
-                              //       );
-                              //     },
-                              //     itemCount: ingredients.length,
-                              //     itemBuilder: (context, index) {
-                              //       return FoodCardSmall();
-                              //     },
-                              //     scrollDirection: Axis.horizontal,
-                              //   ),
-                              // ),
                             ),
                             Expanded(
                               flex: 2,
@@ -66,13 +53,30 @@ class _GameCombineState extends State<GameCombine> {
                                 padding: EdgeInsets.only(
                                   right: 28,
                                 ),
-                                child: DragTarget<Color>(
-                                  onWillAccept: (value) =>
-                                      value == Color(0xFFFF441),
+                                child: DragTarget<TempDataCard>(
+                                  onWillAccept: (value) => value != null,
                                   onAccept: (value) {
-                                    setState(() {
-                                      ingredients.insert(0, FoodCardSmall());
-                                    });
+                                    setState(
+                                      () {
+                                        if (ingredients.length == 3) {
+                                          HapticFeedback.heavyImpact();
+                                          //   ingredients.removeAt(count);
+                                          //   count--;
+                                          //   ingredients.insert(0, FoodCardSmall());
+                                          //   if (count > 0) {
+                                          //     count = 5;
+                                          //   }
+                                        } else {
+                                          ingredients.insert(
+                                            0,
+                                            FoodCardSmall(
+                                              nameImg: value.img,
+                                              color: value.color,
+                                            ),
+                                          );
+                                        }
+                                      },
+                                    );
                                     print(ingredients);
                                   },
                                   onLeave: (value) {},
@@ -122,25 +126,37 @@ class _GameCombineState extends State<GameCombine> {
               Expanded(
                 flex: 3,
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 28, vertical: 28),
+                  padding: EdgeInsets.symmetric(horizontal: 28, vertical: 18),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      SearchBar(),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(15, 0, 15, 18),
+                        child: SearchBar(),
+                      ),
                       Wrap(
                         children: <Widget>[
-                          FoodCardMedium(),
-                          Draggable<Color>(
-                            data: Color(0xFFFF441),
-                            child: FoodCardMedium(),
-                            feedback: FoodCardMedium(),
-                            childWhenDragging: Opacity(
-                              opacity: 0.5,
-                              child: FoodCardMedium(),
-                            ),
+                          DraggableFoodCard(
+                            name: "Fresas",
+                            text: "5 kcal",
+                            img: "fresa",
+                            color: Color(0xFFFFE3E5),
+                          ),
+                          DraggableFoodCard(
+                            name: "Leche",
+                            text: "10 kcal",
+                            img: "leche",
+                            color: Color(0xFFFFF9FF),
+                          ),
+                          DraggableFoodCard(
+                            name: "Huevos",
+                            text: "12 kcal",
+                            img: "huevo",
+                            color: Color(0xFFfbd46d),
                           ),
                         ],
                       ),
+                      Spacer(),
                       SettingGame()
                     ],
                   ),

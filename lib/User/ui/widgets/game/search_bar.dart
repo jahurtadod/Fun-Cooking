@@ -9,11 +9,11 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 40,
       padding: EdgeInsets.symmetric(horizontal: 25),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(50)),
-        color: Theme.of(context).colorScheme.secondary,
+        color: Color(0xFF3598DB),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -25,6 +25,7 @@ class SearchBar extends StatelessWidget {
           Icon(
             FontAwesomeIcons.search,
             color: Colors.white,
+            size: 18,
           ),
         ],
       ),

@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 
 class FoodCardMedium extends StatelessWidget {
+  final String name;
+  final String text;
+  final String img;
+  final Color color;
+
   const FoodCardMedium({
     Key key,
-  }) : super(key: key);
+    @required this.name,
+    @required this.text,
+    @required this.img,
+    this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color(0xFFFFE3E5),
+      color: this.color,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -28,7 +37,7 @@ class FoodCardMedium extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "Fresas",
+                      this.name,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.headline6.copyWith(
@@ -36,7 +45,7 @@ class FoodCardMedium extends StatelessWidget {
                           ),
                     ),
                     Text(
-                      "5 kcal",
+                      this.text,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.subtitle2.copyWith(
@@ -52,7 +61,7 @@ class FoodCardMedium extends StatelessWidget {
               height: 60,
               width: 60,
               margin: EdgeInsets.only(right: 8),
-              child: Image.asset('assets/fresa.png'),
+              child: Image.asset('assets/${this.img}.png'),
             ),
           ],
         ),
