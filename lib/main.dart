@@ -78,12 +78,11 @@ class MyApp extends StatelessWidget {
                 "Agrupa unos 400 taxones descritos, de los cuales solo unos 20 están aceptados.​ "
                 "Son cultivadas por su fruto comestible llamado de la misma manera, fresa o frutilla.",
             img: "fresa",
-            color: Colors.pink[100],
+            color: Color(0xFFFFE3E5),
             colorTop: Colors.pink[300]),
         '/info_recipe': (_) => InfoRecipe(
             name: "Jugo de Fresa",
-            ingredientes:
-                "1/2 K. Fresas \n"
+            ingredientes: "1/2 K. Fresas \n"
                 "1/2 Tza. Leche\n",
             text:
                 "1. Lavar primero muy bien las fresas, retirarle los tallos y proceder a cortarlas en mitades. \n"

@@ -1,30 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fun_cooking/widgets/label_point.dart';
 
 class LabelCollection extends StatelessWidget {
-  const LabelCollection({
-    Key key,
-  }) : super(key: key);
+  final String name;
+  final Color color;
+
+  const LabelCollection({this.name, this.color});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(vertical: 16, horizontal: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Row(
             children: <Widget>[
-              BulletPoint(),
+              BulletPoint(
+                color: this.color,
+              ),
               SizedBox(
-                width: 8,
+                width: 12,
               ),
               Text(
-                "Frutas",
+                this.name,
                 style: Theme.of(context).textTheme.headline6,
               ),
             ],
           ),
-          Text("Más Información", style: Theme.of(context).textTheme.caption),
+          Row(
+            children: <Widget>[
+              Text("Más Información",
+                  style: Theme.of(context).textTheme.caption),
+              SizedBox(
+                width: 5,
+              ),
+              Icon(
+                FontAwesomeIcons.chevronRight,
+                size: 14,
+              )
+            ],
+          ),
         ],
       ),
     );

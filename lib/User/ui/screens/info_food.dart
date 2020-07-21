@@ -16,6 +16,7 @@ class InfoFood extends StatefulWidget {
     this.color,
     this.colorTop,
   });
+
   @override
   _InfoFoodState createState() => _InfoFoodState();
 }
@@ -50,22 +51,26 @@ class _InfoFoodState extends State<InfoFood> {
                     color: Colors.white,
                   ),
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 28),
+                    padding: EdgeInsets.symmetric(vertical: 24, horizontal: 40),
                     child: Column(
                       children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.only(bottom: 16),
-                          width: 80,
-                          height: 5,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
-                            color: Colors.grey,
-                          ),
-                        ),
+                        // Container(
+                        //   margin: EdgeInsets.only(bottom: 16),
+                        //   width: 80,
+                        //   height: 5,
+                        //   decoration: BoxDecoration(
+                        //     borderRadius: BorderRadius.all(Radius.circular(5)),
+                        //     color: Colors.grey,
+                        //   ),
+                        // ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Text(widget.name, style: Theme.of(context).textTheme.headline6.copyWith(fontSize:20,height: 1.7)),
+                            Text(widget.name,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline6
+                                    .copyWith(fontSize: 20, height: 1.7)),
                             Row(
                               children: <Widget>[
                                 Row(
@@ -77,7 +82,12 @@ class _InfoFoodState extends State<InfoFood> {
                                     SizedBox(
                                       width: 5,
                                     ),
-                                    Text("Videos",style: Theme.of(context).textTheme.headline6.copyWith(fontSize:12,height: 1.7)),
+                                    Text("Videos",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline6
+                                            .copyWith(
+                                                fontSize: 12, height: 1.7)),
                                   ],
                                 ),
                                 SizedBox(
@@ -92,7 +102,12 @@ class _InfoFoodState extends State<InfoFood> {
                                     SizedBox(
                                       width: 5,
                                     ),
-                                    Text("Favoritos",style: Theme.of(context).textTheme.headline6.copyWith(fontSize:12,height: 1.7)),
+                                    Text("Favoritos",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline6
+                                            .copyWith(
+                                                fontSize: 12, height: 1.7)),
                                   ],
                                 ),
                               ],
@@ -102,10 +117,14 @@ class _InfoFoodState extends State<InfoFood> {
                         Row(
                           children: <Widget>[
                             Container(
-                              margin: EdgeInsets.only( top: 15),
+                              margin: EdgeInsets.only(top: 15),
                               child: Column(
                                 children: [
-                                  Text("Descripción",style: Theme.of(context).textTheme.headline6.copyWith(fontSize:15,height: 1.7)),
+                                  Text("Descripción",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline6
+                                          .copyWith(fontSize: 15, height: 1.7)),
                                 ],
                               ),
                             ),
@@ -114,7 +133,11 @@ class _InfoFoodState extends State<InfoFood> {
                         SizedBox(
                           height: 20,
                         ),
-                        Text(widget.text,style: Theme.of(context).textTheme.headline6.copyWith(fontSize:12,height: 1.3)),
+                        Text(widget.text,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline6
+                                .copyWith(fontSize: 12, height: 1.3)),
                         SizedBox(
                           height: 20,
                         ),
@@ -189,13 +212,16 @@ class PropertyFood extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              this.name,
-              style: Theme.of(context).textTheme.headline6.copyWith(fontSize:15,height: 1.7,color: this.color)),
-            Text(
-              this.valor,
-              
-              style: Theme.of(context).textTheme.headline6.copyWith(fontSize:15,height: 1.7,color: this.color)),
+            Text(this.name,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline6
+                    .copyWith(fontSize: 15, height: 1.7, color: this.color)),
+            Text(this.valor,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline6
+                    .copyWith(fontSize: 15, height: 1.7, color: this.color)),
           ],
         ),
       ),

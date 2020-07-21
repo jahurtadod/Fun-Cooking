@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class BulletPoint extends StatelessWidget {
-  const BulletPoint({
-    Key key,
-  }) : super(key: key);
+  final Color color;
+
+  const BulletPoint({this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,7 @@ class BulletPoint extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(40)),
                   border: Border.all(
-                      width: 2,
-                      color: Colors.pinkAccent,
-                      style: BorderStyle.solid)),
+                      width: 2, color: this.color, style: BorderStyle.solid)),
             ),
           ),
           Positioned(
@@ -32,7 +30,7 @@ class BulletPoint extends StatelessWidget {
               child: Container(
                 height: 8,
                 width: 8,
-                color: Colors.pinkAccent,
+                color: this.color,
               ),
             ),
           ),

@@ -31,13 +31,24 @@ class _CollectionState extends State<Collection> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    LabelCollection(name: "Frutas", color: Colors.pink[200],),
+                    LabelCollection(
+                      name: "Frutas",
+                      color: Colors.pink[200],
+                    ),
                     Wrap(
                       children: <Widget>[
-                        FoodCard(),
+                        FoodCard(
+                          name: "Fresas",
+                          text: "5 k",
+                          img: "fresa",
+                          color: Color(0xFFFFE3E5),
+                        ),
                       ],
                     ),
-                    LabelCollection(name: "Fantasmas", color: Colors.black,),
+                    LabelCollection(
+                      name: "Fantasmas",
+                      color: Colors.black,
+                    ),
                     Wrap(
                       children: <Widget>[
                         GhostCard(
