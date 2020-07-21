@@ -7,6 +7,8 @@ import 'package:fun_cooking/User/ui/widgets/game/nav_game.dart';
 import 'package:fun_cooking/User/ui/widgets/game/search_bar.dart';
 import 'package:fun_cooking/User/ui/widgets/game/settings_game.dart';
 import 'package:flutter/services.dart';
+import 'package:fun_cooking/widgets/food_card.dart';
+import 'package:fun_cooking/widgets/ghost_card.dart';
 
 class GameCombine extends StatefulWidget {
   @override
@@ -157,7 +159,102 @@ class _GameCombineState extends State<GameCombine> {
                         ],
                       ),
                       Spacer(),
-                      SettingGame()
+                      SettingGame(
+                        clean: () {
+                          if (ingredients.length > 1) {
+                            var temp1 = ["leche", "fresa"];
+                            bool good;
+                            var tempIngredients = [];
+                            for (var ingredient in ingredients) {
+                              print(ingredient.nameImg);
+                              tempIngredients.insert(0, ingredient.nameImg);
+                            }
+                            if (tempIngredients
+                                .every((value) => temp1.contains(value))) {
+                              good = true;
+                            } else {
+                              good = false;
+                            }
+                            showModalBottomSheet(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return Container(
+                                  height: 380,
+                                  color: Color(0xFFf4f6ff),
+                                  child: Center(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: <Widget>[
+                                        Expanded(
+                                          child: Center(
+                                            child: good
+                                                ? FoodCard(
+                                                    name: "Batido de Leche",
+                                                    text: "26 Kcal",
+                                                    img: "batido",
+                                                    color: Color(0xFFFFE3E5),
+                                                  )
+                                                : GhostCard(
+                                                    name: "Ohh Nooo!",
+                                                    text:
+                                                        "Algo salió mal intenta con otros ingredientes",
+                                                    img: "ghost",
+                                                    color: Color(0xF0000000),
+                                                  ),
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.fromLTRB(
+                                              28, 6, 28, 28),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: <Widget>[
+                                              FlatButton(
+                                                child: Text(
+                                                  'Explorar recetas',
+                                                  style: TextStyle(
+                                                    color: Theme.of(context)
+                                                        .colorScheme
+                                                        .secondary,
+                                                    fontSize: 12,
+                                                  ),
+                                                ),
+                                                onPressed: () =>
+                                                    Navigator.pop(context),
+                                              ),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                              Container(
+                                                width: 120,
+                                                child: RaisedButton(
+                                                  child: Text(
+                                                    'Continuar',
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                    ),
+                                                  ),
+                                                  onPressed: () =>
+                                                      Navigator.pop(context),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            );
+                          }
+                        },
+                      )
                     ],
                   ),
                 ),
@@ -165,7 +262,13 @@ class _GameCombineState extends State<GameCombine> {
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigatonGame(),
+        bottomNavigationBar: BottomNavigatonGame(
+          clean: () {
+            setState(() {
+              ingredients.clear();
+            });
+          },
+        ),
       ),
     );
   }
