@@ -3,6 +3,7 @@ import 'package:fun_cooking/User/ui/screens/collection.dart';
 import 'package:fun_cooking/User/ui/screens/game.dart';
 import 'package:fun_cooking/User/ui/screens/home.dart';
 import 'package:fun_cooking/User/ui/screens/info_food.dart';
+import 'package:fun_cooking/User/ui/screens/info_recipe.dart';
 import 'package:fun_cooking/User/ui/screens/sign_in.dart';
 import 'package:fun_cooking/wrapper.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -70,7 +71,28 @@ class MyApp extends StatelessWidget {
         '/home': (_) => Home(),
         '/collection': (_) => Collection(),
         '/game': (_) => GameCombine(),
-        '/info_food': (_) => InfoFood(),
+        '/info_food': (_) => InfoFood(
+            name: "Fresas",
+            text: "Fragaria, llamado comúnmente fresa o frutilla,"
+                " es un género de plantas rastreras estoloníferas de la familia Rosaceae. "
+                "Agrupa unos 400 taxones descritos, de los cuales solo unos 20 están aceptados.​ "
+                "Son cultivadas por su fruto comestible llamado de la misma manera, fresa o frutilla.",
+            img: "fresa",
+            color: Colors.pink[100],
+            colorTop: Colors.pink[300]),
+        '/info_recipe': (_) => InfoRecipe(
+            name: "Jugo de Fresa",
+            ingredientes:
+                "1/2 K. Fresas \n"
+                "1/2 Tza. Leche\n",
+            text:
+                "1. Lavar primero muy bien las fresas, retirarle los tallos y proceder a cortarlas en mitades. \n"
+                "2. Colocarlas en la Licuadora, añadir el Agua, la Leche y el Azúcar. \n"
+                "3. Servir de inmediato en vaso de vidrio. \n"
+                "4. Disfrutar el jugo acompañado de galletas u otro alimento. \n",
+            img: "fresa",
+            color: Colors.pink[100],
+            colorTop: Colors.pink[300]),
       },
     );
   }

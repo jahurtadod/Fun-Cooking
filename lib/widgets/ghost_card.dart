@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class FoodCard extends StatelessWidget {
-  const FoodCard({
+class GhostCard extends StatelessWidget {
+  final String name;
+  final String text;
+  final String img;
+  final Color color;
+
+  const GhostCard({
     Key key,
-  }) : super(key: key);
+    @required this.name,
+    @required this.text,
+    @required this.img,
+    this.color,
+  }); 
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.pink[300],
+      color: this.color,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -28,21 +36,8 @@ class FoodCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Container(
-                      padding: EdgeInsets.fromLTRB(8, 0, 8, 8),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Icon(
-                            FontAwesomeIcons.star,
-                            size: 10,
-                            color: Colors.white60,
-                          )
-                        ],
-                      ),
-                    ),
                     Text(
-                      "Fresas",
+                      this.name,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.headline6.copyWith(
@@ -51,11 +46,11 @@ class FoodCard extends StatelessWidget {
                           ),
                     ),
                     Text(
-                      "5 k",
-                      maxLines: 1,
+                      this.text,
+                      maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.subtitle2.copyWith(
-                            fontSize: 12,
+                            fontSize: 10,
                             color: Colors.white,
                             fontWeight: FontWeight.w300,
                           ),
@@ -70,30 +65,8 @@ class FoodCard extends StatelessWidget {
                 width: 100,
                 margin: EdgeInsets.only(top: 16),
                 child: Hero(
-                  tag: 'food',
-                  child: Image.asset('assets/fresa.png'),
-                ),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                //Navigator.of(context).pushNamed('/info_food');
-                Navigator.of(context).pushNamed('/info_recipe');
-              },
-              child: Container(
-                height: 40,
-                width: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomRight: Radius.circular(10),
-                  ),
-                  color: Colors.pink,
-                ),
-                child: Icon(
-                  FontAwesomeIcons.plus,
-                  color: Colors.white,
-                  size: 12,
+                  tag: 'ghost',
+                  child: Image.asset('assets/${this.img}.png'),
                 ),
               ),
             ),

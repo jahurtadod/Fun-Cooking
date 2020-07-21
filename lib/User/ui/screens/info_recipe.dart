@@ -1,30 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class InfoFood extends StatefulWidget {
+class InfoRecipe extends StatefulWidget {
   final String name;
   final String text;
+  final String ingredientes;
   final String img;
   final Color color;
   final Color colorTop;
 
-  const InfoFood({
+  const InfoRecipe({
     Key key,
     @required this.name,
     @required this.text,
     @required this.img,
+    @required this.ingredientes,
     this.color,
     this.colorTop,
   });
   @override
-  _InfoFoodState createState() => _InfoFoodState();
+  _InfoRecipeState createState() => _InfoRecipeState();
 }
 
-class _InfoFoodState extends State<InfoFood> {
+class _InfoRecipeState extends State<InfoRecipe> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: widget.colorTop,
         ),
@@ -38,7 +41,7 @@ class _InfoFoodState extends State<InfoFood> {
                   width: 150,
                   height: 150,
                   child: Hero(
-                    tag: 'food',
+                    tag: 'recipe',
                     child: Image.asset('assets/${widget.img}.png'),
                   ),
                 ),
@@ -65,7 +68,7 @@ class _InfoFoodState extends State<InfoFood> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Text(widget.name, style: Theme.of(context).textTheme.headline6.copyWith(fontSize:20,height: 1.7)),
+                            Text(widget.name, style: Theme.of(context).textTheme.headline6,),
                             Row(
                               children: <Widget>[
                                 Row(
@@ -105,7 +108,7 @@ class _InfoFoodState extends State<InfoFood> {
                               margin: EdgeInsets.only( top: 15),
                               child: Column(
                                 children: [
-                                  Text("Descripción",style: Theme.of(context).textTheme.headline6.copyWith(fontSize:15,height: 1.7)),
+                                  Text("Ingredientes",style: Theme.of(context).textTheme.headline6.copyWith(fontSize:15,height: 1.7)),
                                 ],
                               ),
                             ),
@@ -114,44 +117,23 @@ class _InfoFoodState extends State<InfoFood> {
                         SizedBox(
                           height: 20,
                         ),
-                        Text(widget.text,style: Theme.of(context).textTheme.headline6.copyWith(fontSize:12,height: 1.3)),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Wrap(
-                          spacing: 10,
-                          runSpacing: 10,
+                        Text(widget.ingredientes,style: Theme.of(context).textTheme.headline6.copyWith(fontSize:15,height: 1.7)),
+                        Row(
                           children: <Widget>[
-                            PropertyFood(
-                                name: "Calorías",
-                                valor: "33 cal",
-                                color: Colors.pink[300]),
-                            PropertyFood(
-                                name: "Grasas",
-                                valor: "0.3 g",
-                                color: Colors.pink[300]),
-                            PropertyFood(
-                                name: "Colesterol",
-                                valor: "0 mg",
-                                color: Colors.pink[300]),
-                            PropertyFood(
-                                name: "Sodio",
-                                valor: "1 mg",
-                                color: Colors.pink[300]),
-                            PropertyFood(
-                                name: "Potasio",
-                                valor: "153 mg",
-                                color: Colors.pink[300]),
-                            PropertyFood(
-                                name: "Carbohidratos",
-                                valor: "8 g",
-                                color: Colors.pink[300]),
-                            PropertyFood(
-                                name: "Proteínas",
-                                valor: "0.7 g",
-                                color: Colors.pink[300]),
+                            Container(
+                              margin: EdgeInsets.only( top: 15),
+                              child: Column(
+                                children: [
+                                  Text("Pasos de la Receta",style: Theme.of(context).textTheme.headline6.copyWith(fontSize:15,height: 1.7)),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
+                                                SizedBox(
+                          height: 20,
+                        ),
+                        Text(widget.text,style: Theme.of(context).textTheme.headline6.copyWith(fontSize:13,height: 1.7)),
                       ],
                     ),
                   ),
@@ -165,40 +147,3 @@ class _InfoFoodState extends State<InfoFood> {
   }
 }
 
-class PropertyFood extends StatelessWidget {
-  final String name;
-  final String valor;
-  final Color color;
-  const PropertyFood({
-    @required this.name,
-    @required this.valor,
-    this.color,
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      width: 150,
-      decoration: BoxDecoration(
-        border: Border.all(color: this.color, width: 1),
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-      ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              this.name,
-              style: Theme.of(context).textTheme.headline6.copyWith(fontSize:15,height: 1.7,color: this.color)),
-            Text(
-              this.valor,
-              
-              style: Theme.of(context).textTheme.headline6.copyWith(fontSize:15,height: 1.7,color: this.color)),
-          ],
-        ),
-      ),
-    );
-  }
-}
