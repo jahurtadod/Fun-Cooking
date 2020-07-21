@@ -27,35 +27,39 @@ class _CollectionState extends State<Collection> {
             padding: EdgeInsets.symmetric(vertical: 16, horizontal: 28),
             child: Column(
               children: <Widget>[
-                Filter(),
+                // Filter(),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    LabelCollection(),
+                    LabelCollection(name: "Frutas", color: Colors.pink[200],),
                     Wrap(
-                      spacing: 10,
                       children: <Widget>[
                         FoodCard(),
-                        /*GhostCard(
-                            name: "Ohh Nooo!",
-                            text: "Algo salió mal intenta con otros ingredientes",
-                            img: "ghost",
-                            color: Color(0xF0000000),
-                            ),
-                          GhostCard(
-                            name: "Ohh Nooo!",
-                            text: "La combinación no es posible",
-                            img: "fuego",
-                            color: Color(0xF0000000),
-                            ),
-                          GhostCard(
-                            name: "Ohh Nooo!",
-                            text: "Algo falta, que será?",
-                            img: "jeit",
-                            color: Color(0xF0000000),
-                            ),*/
                       ],
-                    )
+                    ),
+                    LabelCollection(name: "Fantasmas", color: Colors.black,),
+                    Wrap(
+                      children: <Widget>[
+                        GhostCard(
+                          name: "Ohh Nooo!",
+                          text: "Algo salió mal intenta con otros ingredientes",
+                          img: "ghost",
+                          color: Color(0xF0000000),
+                        ),
+                        GhostCard(
+                          name: "Ohh Nooo!",
+                          text: "La combinación no es posible",
+                          img: "fuego",
+                          color: Color(0xF0000000),
+                        ),
+                        GhostCard(
+                          name: "Ohh Nooo!",
+                          text: "Algo falta, que será?",
+                          img: "jeit",
+                          color: Color(0xF0000000),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ],
