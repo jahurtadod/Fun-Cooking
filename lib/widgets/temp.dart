@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:fun_cooking/User/ui/screens/info_food.dart';
+import 'package:fun_cooking/User/ui/screens/info_recipe.dart';
 
-class FoodCard extends StatelessWidget {
+class FoodCard2 extends StatelessWidget {
   final String name;
   final String text;
-  final String description;
   final String img;
+  final String description;
+  final String ingredientes;
   final Color color;
   final Color colorsecundary;
 
-
-  const FoodCard({
+  const FoodCard2({
     @required this.name,
     @required this.text,
-    @required this.description,
     @required this.img,
+    @required this.description,
+    @required this.ingredientes,
     this.color,
     this.colorsecundary,
   });
@@ -81,7 +82,7 @@ class FoodCard extends StatelessWidget {
                 width: 100,
                 margin: EdgeInsets.only(top: 16),
                 child: Hero(
-                  tag: this.name,
+                  tag: 'food',
                   child: Image.asset('assets/${this.img}.png'),
                 ),
               ),
@@ -91,12 +92,14 @@ class FoodCard extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => InfoFood(
-                        name: this.name,
-                        text: this.description,
-                        img: this.img,
-                        color: this.color,
-                        colorTop: this.color),
+                    builder: (context) => InfoRecipe(
+                      name: this.name,
+                      ingredientes:  this.ingredientes,
+                      text: this.description,
+                      img: this.img,
+                      color: this.color,
+                      colorTop: this.color,
+                    ),
                   ),
                 );
               },

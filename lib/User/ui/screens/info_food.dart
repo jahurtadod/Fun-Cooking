@@ -27,6 +27,7 @@ class _InfoFoodState extends State<InfoFood> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          elevation: 0.0,
           backgroundColor: widget.colorTop,
         ),
         body: Container(
@@ -39,7 +40,7 @@ class _InfoFoodState extends State<InfoFood> {
                   width: 150,
                   height: 150,
                   child: Hero(
-                    tag: 'food',
+                    tag: widget.name,
                     child: Image.asset('assets/${widget.img}.png'),
                   ),
                 ),

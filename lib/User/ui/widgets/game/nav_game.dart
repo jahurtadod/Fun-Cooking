@@ -21,7 +21,7 @@ class NavGame extends StatelessWidget {
                   height: 30,
                   width: 85,
                   margin: EdgeInsets.symmetric(
-                      horizontal: 8, vertical: 8),
+                      horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(
                         Radius.circular(5)),
@@ -53,7 +53,7 @@ class NavGame extends StatelessWidget {
                   height: 30,
                   width: 76,
                   margin: EdgeInsets.symmetric(
-                      horizontal: 8, vertical: 8),
+                      horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(
                         Radius.circular(5)),

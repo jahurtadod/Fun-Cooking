@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
                     height: 8,
                   ),
                   SelectMode(
-                    text: "Juega",
+                    text: "Descubrir",
                     img: "img1",
                     onPressed: () {
                       Navigator.of(context).pushNamed('/game');
@@ -51,16 +51,18 @@ class _HomeState extends State<Home> {
                     height: 24,
                   ),
                   Text(
-                    "Tus cartas favoritas",
+                    "Tus recetas favoritas",
                     style: Theme.of(context).textTheme.subtitle1,
                   ),
                   SizedBox(
                     height: 8,
                   ),
                   SelectMode(
-                    text: "Favoritos",
+                    text: "Recetas",
                     img: "img3",
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/recipes');
+                    },
                     color: Color(0xFF6358A1),
                     direction: true,
                   ),

@@ -4,6 +4,7 @@ import 'package:fun_cooking/User/ui/screens/game.dart';
 import 'package:fun_cooking/User/ui/screens/home.dart';
 import 'package:fun_cooking/User/ui/screens/info_food.dart';
 import 'package:fun_cooking/User/ui/screens/info_recipe.dart';
+import 'package:fun_cooking/User/ui/screens/recipe.dart';
 import 'package:fun_cooking/User/ui/screens/sign_in.dart';
 import 'package:fun_cooking/wrapper.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -70,6 +71,7 @@ class MyApp extends StatelessWidget {
         '/': (_) => SingIn(),
         '/home': (_) => Home(),
         '/collection': (_) => Collection(),
+        '/recipes': (_) => Recipe(),
         '/game': (_) => GameCombine(),
         '/info_food': (_) => InfoFood(
             name: "Fresas",
@@ -89,7 +91,7 @@ class MyApp extends StatelessWidget {
                 "2. Colocarlas en la Licuadora, añadir el Agua, la Leche y el Azúcar. \n"
                 "3. Servir de inmediato en vaso de vidrio. \n"
                 "4. Disfrutar el jugo acompañado de galletas u otro alimento. \n",
-            img: "fresa",
+            img: "batido",
             color: Colors.pink[100],
             colorTop: Colors.pink[300]),
       },

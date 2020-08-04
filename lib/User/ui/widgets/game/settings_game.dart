@@ -3,9 +3,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SettingGame extends StatelessWidget {
   final Function clean;
+  final Function scrollUp;
+  final Function scrollDown;
 
   const SettingGame({
     this.clean,
+    this.scrollUp,
+    this.scrollDown
   });
 
   @override
@@ -23,10 +27,11 @@ class SettingGame extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       GestureDetector(
+                        onTap: scrollUp,
                         child: Container(
                           padding: EdgeInsets.fromLTRB(2, 2, 3, 2),
                           child: Icon(
-                            FontAwesomeIcons.angleLeft,
+                            FontAwesomeIcons.angleUp,
                             color: Colors.grey,
                           ),
                           decoration: BoxDecoration(
@@ -39,10 +44,11 @@ class SettingGame extends StatelessWidget {
                         ),
                       ),
                       GestureDetector(
+                        onTap: scrollDown,
                         child: Container(
                           padding: EdgeInsets.fromLTRB(3, 2, 2, 2),
                           child: Icon(
-                            FontAwesomeIcons.angleRight,
+                            FontAwesomeIcons.angleDown,
                             color: Colors.grey,
                           ),
                           decoration: BoxDecoration(

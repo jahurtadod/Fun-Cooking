@@ -29,6 +29,7 @@ class _InfoRecipeState extends State<InfoRecipe> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          elevation: 0.0,
           backgroundColor: widget.colorTop,
         ),
         body: Container(
@@ -37,11 +38,11 @@ class _InfoRecipeState extends State<InfoRecipe> {
             child: Column(
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.all(16),
+                  margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
                   width: 150,
                   height: 150,
                   child: Hero(
-                    tag: 'recipe',
+                    tag: widget.name,
                     child: Image.asset('assets/${widget.img}.png'),
                   ),
                 ),
@@ -68,7 +69,10 @@ class _InfoRecipeState extends State<InfoRecipe> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Text(widget.name, style: Theme.of(context).textTheme.headline6,),
+                            Text(
+                              widget.name,
+                              style: Theme.of(context).textTheme.headline6,
+                            ),
                             Row(
                               children: <Widget>[
                                 Row(
@@ -80,7 +84,12 @@ class _InfoRecipeState extends State<InfoRecipe> {
                                     SizedBox(
                                       width: 5,
                                     ),
-                                    Text("Videos",style: Theme.of(context).textTheme.headline6.copyWith(fontSize:12,height: 1.7)),
+                                    Text("Videos",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline6
+                                            .copyWith(
+                                                fontSize: 12, height: 1.7)),
                                   ],
                                 ),
                                 SizedBox(
@@ -95,7 +104,12 @@ class _InfoRecipeState extends State<InfoRecipe> {
                                     SizedBox(
                                       width: 5,
                                     ),
-                                    Text("Favoritos",style: Theme.of(context).textTheme.headline6.copyWith(fontSize:12,height: 1.7)),
+                                    Text("Favoritos",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline6
+                                            .copyWith(
+                                                fontSize: 12, height: 1.7)),
                                   ],
                                 ),
                               ],
@@ -105,10 +119,14 @@ class _InfoRecipeState extends State<InfoRecipe> {
                         Row(
                           children: <Widget>[
                             Container(
-                              margin: EdgeInsets.only( top: 15),
+                              margin: EdgeInsets.only(top: 15),
                               child: Column(
                                 children: [
-                                  Text("Ingredientes",style: Theme.of(context).textTheme.headline6.copyWith(fontSize:15,height: 1.7)),
+                                  Text("Ingredientes",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline6
+                                          .copyWith(fontSize: 15, height: 1.7)),
                                 ],
                               ),
                             ),
@@ -117,23 +135,35 @@ class _InfoRecipeState extends State<InfoRecipe> {
                         SizedBox(
                           height: 20,
                         ),
-                        Text(widget.ingredientes,style: Theme.of(context).textTheme.headline6.copyWith(fontSize:15,height: 1.7)),
+                        Text(widget.ingredientes,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline6
+                                .copyWith(fontSize: 15, height: 1.7)),
                         Row(
                           children: <Widget>[
                             Container(
-                              margin: EdgeInsets.only( top: 15),
+                              margin: EdgeInsets.only(top: 15),
                               child: Column(
                                 children: [
-                                  Text("Pasos de la Receta",style: Theme.of(context).textTheme.headline6.copyWith(fontSize:15,height: 1.7)),
+                                  Text("Pasos de la Receta",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline6
+                                          .copyWith(fontSize: 15, height: 1.7)),
                                 ],
                               ),
                             ),
                           ],
                         ),
-                                                SizedBox(
+                        SizedBox(
                           height: 20,
                         ),
-                        Text(widget.text,style: Theme.of(context).textTheme.headline6.copyWith(fontSize:13,height: 1.7)),
+                        Text(widget.text,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline6
+                                .copyWith(fontSize: 13, height: 1.7)),
                       ],
                     ),
                   ),
@@ -146,4 +176,3 @@ class _InfoRecipeState extends State<InfoRecipe> {
     );
   }
 }
-

@@ -29,19 +29,19 @@ class LabelCollection extends StatelessWidget {
               ),
             ],
           ),
-          Row(
-            children: <Widget>[
-              Text("Más Información",
-                  style: Theme.of(context).textTheme.caption),
-              SizedBox(
-                width: 5,
-              ),
-              Icon(
-                FontAwesomeIcons.chevronRight,
-                size: 14,
-              )
-            ],
-          ),
+          // Row(
+          //   children: <Widget>[
+          //     Text("Más Información",
+          //         style: Theme.of(context).textTheme.caption),
+          //     SizedBox(
+          //       width: 5,
+          //     ),
+          //     Icon(
+          //       FontAwesomeIcons.chevronRight,
+          //       size: 14,
+          //     )
+          //   ],
+          // ),
         ],
       ),
     );

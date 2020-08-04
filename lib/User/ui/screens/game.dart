@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fun_cooking/User/model/temp_data_card.dart';
+import 'package:fun_cooking/User/model/temp_recipe.dart';
 import 'package:fun_cooking/User/ui/widgets/game/bottom_navigator_game.dart';
 import 'package:fun_cooking/User/ui/widgets/game/draggable_food_card.dart';
 import 'package:fun_cooking/User/ui/widgets/game/food_card_small.dart';
@@ -9,6 +10,7 @@ import 'package:fun_cooking/User/ui/widgets/game/settings_game.dart';
 import 'package:flutter/services.dart';
 import 'package:fun_cooking/widgets/food_card.dart';
 import 'package:fun_cooking/widgets/ghost_card.dart';
+import 'package:fun_cooking/widgets/temp.dart';
 
 class GameCombine extends StatefulWidget {
   @override
@@ -17,13 +19,31 @@ class GameCombine extends StatefulWidget {
 
 class _GameCombineState extends State<GameCombine> {
   List<FoodCardSmall> ingredients = <FoodCardSmall>[];
+  final _controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
-    // int count = 4;
+    void _moveUp() {
+      _controller.animateTo(_controller.offset - 110,
+          duration: Duration(seconds: 2), curve: Curves.fastLinearToSlowEaseIn);
+    }
+
+    void _moveDown() {
+      _controller.animateTo(_controller.offset + 110,
+          duration: Duration(seconds: 2), curve: Curves.fastLinearToSlowEaseIn);
+    }
 
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "Descubrir",
+            style: Theme.of(context).textTheme.headline6.copyWith(
+                  color: Colors.white,
+                ),
+          ),
+          backgroundColor: Theme.of(context).colorScheme.primary,
+        ),
         body: Container(
           child: Column(
             children: <Widget>[
@@ -60,7 +80,7 @@ class _GameCombineState extends State<GameCombine> {
                                   onAccept: (value) {
                                     setState(
                                       () {
-                                        if (ingredients.length == 3) {
+                                        if (ingredients.length == 4) {
                                           HapticFeedback.heavyImpact();
                                           //   ingredients.removeAt(count);
                                           //   count--;
@@ -136,34 +156,82 @@ class _GameCombineState extends State<GameCombine> {
                         padding: EdgeInsets.fromLTRB(15, 0, 15, 18),
                         child: SearchBar(),
                       ),
-                      Wrap(
-                        children: <Widget>[
-                          DraggableFoodCard(
-                            name: "Fresas",
-                            text: "5 kcal",
-                            img: "fresa",
-                            color: Color(0xFFFFE3E5),
-                          ),
-                          DraggableFoodCard(
-                            name: "Leche",
-                            text: "10 kcal",
-                            img: "leche",
-                            color: Color(0xFFFFF9FF),
-                          ),
-                          DraggableFoodCard(
-                            name: "Huevos",
-                            text: "12 kcal",
-                            img: "huevo",
-                            color: Color(0xFFfbd46d),
-                          ),
-                        ],
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        height: 250,
+                        child: ListView(
+                          controller: _controller,
+                          children: <Widget>[
+                            SizedBox(
+                              width: 28,
+                            ),
+                            Wrap(
+                              children: <Widget>[
+                                DraggableFoodCard(
+                                  name: "Fresas",
+                                  text: "33 kcal",
+                                  img: "fresa",
+                                  color: Color(0xFFFFE3E5),
+                                ),
+                                DraggableFoodCard(
+                                  name: "Leche",
+                                  text: "42 kcal",
+                                  img: "leche",
+                                  color: Color(0xFFFFF9FF),
+                                ),
+                                DraggableFoodCard(
+                                  name: "Moras",
+                                  text: "43 kcal",
+                                  img: "mora",
+                                  color: Color(0xFFB5CCF8),
+                                ),
+                                DraggableFoodCard(
+                                  name: "Huevos",
+                                  text: "12 kcal",
+                                  img: "huevo",
+                                  color: Color(0xFFfbd46d),
+                                ),
+                                DraggableFoodCard(
+                                  name: "Chocolate",
+                                  text: "535 kcal",
+                                  img: "chocolate",
+                                  color: Color(0xFFE7C4B1),
+                                ),
+                                DraggableFoodCard(
+                                  name: "Harina",
+                                  text: "364 kcal",
+                                  img: "harina",
+                                  color: Color(0xFFD1CBC7),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 28,
+                            ),
+                          ],
+                        ),
                       ),
                       Spacer(),
                       SettingGame(
+                        scrollUp: () {
+                          _moveUp();
+                        },
+                        scrollDown: () {
+                          _moveDown();
+                        },
                         clean: () {
                           if (ingredients.length > 1) {
                             var temp1 = ["leche", "fresa"];
-                            bool good;
+                            var temp2 = ["leche", "mora"];
+                            var temp3 = [
+                              "leche",
+                              "harina",
+                              "huevo",
+                              "chocolate"
+                            ];
+
+                            bool good = true;
+                            TempRecipe temp;
                             var tempIngredients = [];
                             for (var ingredient in ingredients) {
                               print(ingredient.nameImg);
@@ -171,7 +239,56 @@ class _GameCombineState extends State<GameCombine> {
                             }
                             if (tempIngredients
                                 .every((value) => temp1.contains(value))) {
-                              good = true;
+                              temp = TempRecipe(
+                                name: "Batido de Leche",
+                                text: "226 kcal",
+                                img: "batido",
+                                ingredientes: "1/2 K. Fresas \n"
+                                    "1/2 Tza. Leche\n",
+                                description:
+                                    "1. Lavar primero muy bien las fresas, retirarle los tallos y proceder a cortarlas en mitades. \n"
+                                    "2. Colocarlas en la Licuadora, añadir el Agua, la Leche y el Azúcar. \n"
+                                    "3. Servir de inmediato en vaso de vidrio. \n"
+                                    "4. Disfrutar el jugo acompañado de galletas u otro alimento. \n",
+                                color: Color(0xFFFFE3E5),
+                                color2: Colors.pink[200],
+                              );
+                            } else if (tempIngredients
+                                .every((value) => temp2.contains(value))) {
+                              temp = TempRecipe(
+                                name: "Batido de Mora",
+                                text: "310 kcal",
+                                img: "recipe2",
+                                ingredientes: "1/2 K. Fresas \n"
+                                    "1/2 Tza. Leche\n",
+                                description:
+                                    "1. Lavar primero muy bien las fresas, retirarle los tallos y proceder a cortarlas en mitades. \n"
+                                    "2. Colocarlas en la Licuadora, añadir el Agua, la Leche y el Azúcar. \n"
+                                    "3. Servir de inmediato en vaso de vidrio. \n"
+                                    "4. Disfrutar el jugo acompañado de galletas u otro alimento. \n",
+                                color: Color(0xFFB5CCF8),
+                                color2: Color(0xFF6899F3),
+                              );
+                            } else if (tempIngredients
+                                .every((value) => temp3.contains(value))) {
+                              if (tempIngredients.length >= 4) {
+                                temp = TempRecipe(
+                                  name: "Pastel de chocolate",
+                                  text: "310 kcal",
+                                  img: "recipe1",
+                                  ingredientes: "1/2 K. Fresas \n"
+                                      "1/2 Tza. Leche\n",
+                                  description:
+                                      "1. Lavar primero muy bien las fresas, retirarle los tallos y proceder a cortarlas en mitades. \n"
+                                      "2. Colocarlas en la Licuadora, añadir el Agua, la Leche y el Azúcar. \n"
+                                      "3. Servir de inmediato en vaso de vidrio. \n"
+                                      "4. Disfrutar el jugo acompañado de galletas u otro alimento. \n",
+                                  color: Color(0xFFB5CCF8),
+                                  color2: Color(0xFFD9A082),
+                                );
+                              } else {
+                                good = false;
+                              }
                             } else {
                               good = false;
                             }
@@ -190,11 +307,16 @@ class _GameCombineState extends State<GameCombine> {
                                         Expanded(
                                           child: Center(
                                             child: good
-                                                ? FoodCard(
-                                                    name: "Batido de Leche",
-                                                    text: "26 Kcal",
-                                                    img: "batido",
-                                                    color: Color(0xFFFFE3E5),
+                                                ? FoodCard2(
+                                                    name: temp.name,
+                                                    text: temp.text,
+                                                    img: temp.img,
+                                                    color: temp.color,
+                                                    description:
+                                                        temp.description,
+                                                    ingredientes:
+                                                        temp.ingredientes,
+                                                    colorsecundary: temp.color2,
                                                   )
                                                 : GhostCard(
                                                     name: "Ohh Nooo!",
@@ -225,7 +347,8 @@ class _GameCombineState extends State<GameCombine> {
                                                   ),
                                                 ),
                                                 onPressed: () =>
-                                                    Navigator.pop(context),
+                                                    Navigator.of(context)
+                                                        .pushNamed('/recipes'),
                                               ),
                                               SizedBox(
                                                 width: 10,
