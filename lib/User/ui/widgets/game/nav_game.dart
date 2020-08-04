@@ -19,16 +19,11 @@ class NavGame extends StatelessWidget {
               children: <Widget>[
                 Container(
                   height: 30,
-                  width: 85,
-                  margin: EdgeInsets.symmetric(
-                      horizontal: 8, vertical: 8),
+                  width: 100,
+                  margin: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(5)),
-                    color: Theme.of(context)
-                        .colorScheme
-                        .primary,
-                  ),
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                      color: Color.fromRGBO(255, 255, 255, 0.2)),
                   child: Row(
                     children: <Widget>[
                       Container(
@@ -43,30 +38,25 @@ class NavGame extends StatelessWidget {
                       ),
                       Text(
                         "250",
-                        style:
-                            TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white),
                       )
                     ],
                   ),
                 ),
                 Container(
                   height: 30,
-                  width: 76,
-                  margin: EdgeInsets.symmetric(
-                      horizontal: 8, vertical: 8),
+                  width: 100,
+                  margin: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(5)),
-                    color: Theme.of(context)
-                        .colorScheme
-                        .primary,
-                  ),
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                      color: Color.fromRGBO(255, 255, 255, 0.2)),
                   child: Center(
                     child: Text(
                       "Record: 1200",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 10),
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline5
+                          .copyWith(color: Colors.white, fontSize: 13),
                     ),
                   ),
                 ),

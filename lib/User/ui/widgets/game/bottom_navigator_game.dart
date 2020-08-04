@@ -34,8 +34,8 @@ class BottomNavigatonGame extends StatelessWidget {
                     context: context,
                     builder: (BuildContext context) {
                       return Container(
-                        height: 160,
-                        color: Colors.amber,
+                        height: 70,
+                        color: Color.fromRGBO(245, 136, 80, 1),
                         child: Center(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,22 +51,27 @@ class BottomNavigatonGame extends StatelessWidget {
                                       Container(
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.all(
-                                              Radius.circular(4)),
-                                          color: Theme.of(context)
+                                              Radius.circular(100)),
+                                              color: Colors.white54
+                                          /*color: Theme.of(context)
                                               .colorScheme
-                                              .primary,
+                                              .primary,*/
                                         ),
                                         child: IconButton(
                                             icon: Icon(
                                               FontAwesomeIcons.music,
-                                              color: Colors.white,
+                                              color: Colors.blueGrey,
+                                              size: 15,
                                             ),
                                             onPressed: () {}),
                                       ),
                                       SizedBox(
                                         width: 10,
                                       ),
-                                      Text("Música"),
+                                      Text("Música", style: Theme.of(context)
+                                          .textTheme
+                                          .headline6
+                                          .copyWith(fontSize: 14)),
                                     ],
                                   ),
                                 ],
@@ -81,22 +86,24 @@ class BottomNavigatonGame extends StatelessWidget {
                                       Container(
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.all(
-                                              Radius.circular(4)),
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary,
+                                              Radius.circular(100)),
+                                          color: Colors.white54
                                         ),
                                         child: IconButton(
                                             icon: Icon(
                                               FontAwesomeIcons.volumeUp,
-                                              color: Colors.white,
+                                              color: Colors.blueGrey,
+                                              size: 15,
                                             ),
                                             onPressed: () {}),
                                       ),
                                       SizedBox(
                                         width: 10,
                                       ),
-                                      Text("Sonidos"),
+                                      Text("Sonidos",style: Theme.of(context)
+                                          .textTheme
+                                          .headline6
+                                          .copyWith(fontSize: 14)),
                                     ],
                                   ),
                                 ],

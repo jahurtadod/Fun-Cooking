@@ -25,12 +25,13 @@ class _GameCombineState extends State<GameCombine> {
     return SafeArea(
       child: Scaffold(
         body: Container(
+          color: Color.fromRGBO(14, 96, 151, 1),
           child: Column(
             children: <Widget>[
               Expanded(
                 flex: 2,
                 child: Container(
-                  color: Color(0xFF018FEF),
+                  color: Color.fromRGBO(14, 96, 151, 1),
                   child: Column(
                     children: <Widget>[
                       Expanded(
@@ -85,6 +86,7 @@ class _GameCombineState extends State<GameCombine> {
                                   builder: (context, candidates, rejects) {
                                     return candidates.length > 0
                                         ? Container(
+                                         
                                             margin: EdgeInsets.only(bottom: 16),
                                             decoration: BoxDecoration(
                                               borderRadius: BorderRadius.all(
@@ -128,6 +130,17 @@ class _GameCombineState extends State<GameCombine> {
               Expanded(
                 flex: 3,
                 child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(24),
+                        topRight: Radius.circular(24),
+                        //bottomLeft: Radius.circular(24),
+                        //bottomRight: Radius.circular(24)
+                        ),
+                        
+                    color: Colors.white,
+                  ),
+                  //color: Color.fromRGBO(112, 112, 112, 0.1),
                   padding: EdgeInsets.symmetric(horizontal: 28, vertical: 18),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -224,8 +237,11 @@ class _GameCombineState extends State<GameCombine> {
                                                     fontSize: 12,
                                                   ),
                                                 ),
-                                                onPressed: () =>
-                                                    Navigator.pop(context),
+                                                onPressed: () {
+                                                  Navigator.of(context)
+                                                      .pushNamed(
+                                                          '/info_recipe');
+                                                },
                                               ),
                                               SizedBox(
                                                 width: 10,
@@ -235,9 +251,12 @@ class _GameCombineState extends State<GameCombine> {
                                                 child: RaisedButton(
                                                   child: Text(
                                                     'Continuar',
-                                                    style: TextStyle(
-                                                      color: Colors.white,
-                                                    ),
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .headline5
+                                                        .copyWith(
+                                                            color: Colors.white,
+                                                            fontSize: 12),
                                                   ),
                                                   onPressed: () =>
                                                       Navigator.pop(context),

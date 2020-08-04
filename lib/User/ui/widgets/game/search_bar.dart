@@ -13,14 +13,18 @@ class SearchBar extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 25),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(50)),
-        color: Color(0xFF3598DB),
+        color: Color.fromRGBO(14, 96, 151, 1),
+        //color: Color(0xFF3598DB),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Text(
             "Buscar alimentos",
-            style: TextStyle(color: Colors.white),
+            style: Theme.of(context)
+                .textTheme
+                .headline5
+                .copyWith(color: Colors.white,fontSize: 12),
           ),
           Icon(
             FontAwesomeIcons.search,
