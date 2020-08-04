@@ -27,7 +27,7 @@ class _FavoriteButton extends State<FavoriteButton> {
     return FloatingActionButton(
       backgroundColor: Colors.white,
       mini: true,
-      tooltip: "Favoritos",
+      
       onPressed: onPressedFav,
       child: Icon(
         Icons.favorite_border,

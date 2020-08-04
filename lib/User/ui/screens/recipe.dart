@@ -50,6 +50,7 @@ class _RecipeState extends State<Recipe> {
                                     img: "batido",
                                     color: Colors.pink[100],
                                     colorTop: Colors.pink[100],
+                                    racion: "5 raciones",
                                   ),
                                 ),
                               );
@@ -128,6 +129,7 @@ class _RecipeState extends State<Recipe> {
                                       img: "recipe1",
                                       color: Color(0xFFE7C4B1),
                                       colorTop: Color(0xFFE7C4B1),
+                                      racion: "5 raciones",
                                     ),
                                   ),
                                 );
@@ -156,6 +158,7 @@ class _RecipeState extends State<Recipe> {
                                       img: "recipe2",
                                       color: Color(0xFFB5CCF8),
                                       colorTop: Color(0xFFB5CCF8),
+                                      racion: "5 raciones",
                                     ),
                                   ),
                                 );
@@ -184,6 +187,7 @@ class _RecipeState extends State<Recipe> {
                                       img: "recipe3",
                                       color: Color(0xFFFFE3E5),
                                       colorTop: Color(0xFFFFE3E5),
+                                      racion: "5 raciones",
                                     ),
                                   ),
                                 );
@@ -193,6 +197,7 @@ class _RecipeState extends State<Recipe> {
                                 text: "452 kcal",
                                 img: "recipe3",
                                 color: Color(0xFFFFE3E5),
+                                
                               ),
                             ),
                             SizedBox(

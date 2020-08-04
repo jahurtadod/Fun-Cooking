@@ -19,13 +19,14 @@ class NavGame extends StatelessWidget {
               children: <Widget>[
                 Container(
                   height: 30,
-                  width: 85,
                   margin: EdgeInsets.symmetric(
                       horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(5)),
                       color: Color.fromRGBO(255, 255, 255, 0.2)),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Container(
                         width: 50,
@@ -46,7 +47,6 @@ class NavGame extends StatelessWidget {
                 ),
                 Container(
                   height: 30,
-                  width: 76,
                   margin: EdgeInsets.symmetric(
                       horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
@@ -58,7 +58,7 @@ class NavGame extends StatelessWidget {
                       style: Theme.of(context)
                           .textTheme
                           .headline5
-                          .copyWith(color: Colors.white, fontSize: 13),
+                          .copyWith(color: Colors.white, fontSize: 12),
                     ),
                   ),
                 ),

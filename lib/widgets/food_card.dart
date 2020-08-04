@@ -96,7 +96,7 @@ class FoodCard extends StatelessWidget {
                         text: this.description,
                         img: this.img,
                         color: this.color,
-                        colorTop: this.color),
+                        colorTop: this.colorsecundary),
                   ),
                 );
               },

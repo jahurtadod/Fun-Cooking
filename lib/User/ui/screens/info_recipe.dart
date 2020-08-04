@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fun_cooking/widgets/favorite_button.dart';
-import 'package:fun_cooking/widgets/video_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class InfoRecipe extends StatefulWidget {
   final String name;
@@ -45,10 +45,7 @@ class _InfoRecipeState extends State<InfoRecipe> {
                   margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
                   width: 150,
                   height: 150,
-                  child: Hero(
-                    tag: widget.name,
-                    child: Image.asset('assets/${widget.img}.png'),
-                  ),
+                  child: Image.asset('assets/${widget.img}.png'),
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -81,9 +78,28 @@ class _InfoRecipeState extends State<InfoRecipe> {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    VideoButton(),
-                                    SizedBox(
-                                      width: 10,
+                                    Container(
+                                      width: 40,
+                                      height: 40,
+                                      child: RaisedButton(
+                                        elevation: 5,
+                                        color: Colors.white,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                        ),
+                                        padding: EdgeInsets.zero,
+                                        onPressed: () => {
+                                          launch(
+                                              'https://www.youtube.com/watch?v=Z1OLG7F3HD4')
+                                        },
+                                        child: Center(
+                                          child: Icon(
+                                            Icons.slow_motion_video,
+                                            size: 22,
+                                          ),
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -96,7 +112,6 @@ class _InfoRecipeState extends State<InfoRecipe> {
                                     SizedBox(
                                       width: 5,
                                     ),
-                                  
                                   ],
                                 ),
                               ],

@@ -99,6 +99,7 @@ class FoodCard2 extends StatelessWidget {
                       img: this.img,
                       color: this.color,
                       colorTop: this.color,
+                      racion: "5 raciones",
                     ),
                   ),
                 );
