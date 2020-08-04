@@ -76,10 +76,9 @@ class SettingGame extends StatelessWidget {
                   color: Theme.of(context).colorScheme.secondary,
                 ),
                 child: Center(
-                    child: Text(
-                  "PREPARAR",
-                  style: TextStyle(color: Colors.white),
-                )),
+                    child: Text("PREPARAR",
+                        style: Theme.of(context).textTheme.headline6.copyWith(
+                            fontSize: 15, height: 1.7, color: Colors.white))),
               ),
             ),
           ),

@@ -77,15 +77,15 @@ class MyApp extends StatelessWidget {
             name: "Fresas",
             text: "Fragaria, llamado comúnmente fresa o frutilla,"
                 " es un género de plantas rastreras estoloníferas de la familia Rosaceae. "
-                "Agrupa unos 400 taxones descritos, de los cuales solo unos 20 están aceptados.​ "
-                "Son cultivadas por su fruto comestible llamado de la misma manera, fresa o frutilla.",
+                "Agrupa unos 400 taxones descritos, de los cuales solo unos 20 están aceptados.​ ",
             img: "fresa",
-            color: Color(0xFFFFE3E5),
-            colorTop: Colors.pink[300]),
+            color: Colors.red[100],
+            colorTop: Colors.red[300]),
         '/info_recipe': (_) => InfoRecipe(
             name: "Jugo de Fresa",
+            racion: "5 raciones",
             ingredientes: "1/2 K. Fresas \n"
-                "1/2 Tza. Leche\n",
+                "1/2 Tza. Leche",
             text:
                 "1. Lavar primero muy bien las fresas, retirarle los tallos y proceder a cortarlas en mitades. \n"
                 "2. Colocarlas en la Licuadora, añadir el Agua, la Leche y el Azúcar. \n"

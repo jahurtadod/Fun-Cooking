@@ -72,75 +72,56 @@ class _InfoFoodState extends State<InfoFood> {
                                     .textTheme
                                     .headline6
                                     .copyWith(fontSize: 20, height: 1.7)),
-                            Row(
-                              children: <Widget>[
-                                Row(
-                                  children: <Widget>[
-                                    Icon(
-                                      FontAwesomeIcons.video,
-                                      size: 14,
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text("Videos",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline6
-                                            .copyWith(
-                                                fontSize: 12, height: 1.7)),
-                                  ],
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Row(
-                                  children: <Widget>[
-                                    Icon(
-                                      FontAwesomeIcons.solidHeart,
-                                      size: 14,
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text("Favoritos",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline6
-                                            .copyWith(
-                                                fontSize: 12, height: 1.7)),
-                                  ],
-                                ),
-                              ],
-                            ),
                           ],
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 15, bottom: 5),
+                          color: widget.color,
+                          height: 1,
                         ),
                         Row(
                           children: <Widget>[
                             Container(
-                              margin: EdgeInsets.only(top: 15),
                               child: Column(
                                 children: [
                                   Text("Descripción",
                                       style: Theme.of(context)
                                           .textTheme
                                           .headline6
-                                          .copyWith(fontSize: 15, height: 1.7)),
+                                          .copyWith(fontSize: 15, height: 1.7, fontWeight: FontWeight.bold)),
                                 ],
                               ),
                             ),
                           ],
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
                         Text(widget.text,
                             style: Theme.of(context)
                                 .textTheme
                                 .headline6
-                                .copyWith(fontSize: 12, height: 1.3)),
-                        SizedBox(
-                          height: 20,
+                                .copyWith(fontSize: 14, height: 1.7)),
+                        Container(
+                          margin: EdgeInsets.only(top: 10, bottom: 5),
+                          color: widget.color,
+                          height: 1,
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.only(bottom: 15),
+                              child: Column(
+                                children: [
+                                  Text("Información nutricional",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline6
+                                          .copyWith(fontSize: 15, height: 1.7, fontWeight: FontWeight.bold)),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                         Wrap(
                           spacing: 10,
@@ -149,31 +130,31 @@ class _InfoFoodState extends State<InfoFood> {
                             PropertyFood(
                                 name: "Calorías",
                                 valor: "33 cal",
-                                color: Colors.pink[300]),
+                                color: widget.colorTop),
                             PropertyFood(
                                 name: "Grasas",
                                 valor: "0.3 g",
-                                color: Colors.pink[300]),
+                                color: widget.colorTop),
                             PropertyFood(
                                 name: "Colesterol",
                                 valor: "0 mg",
-                                color: Colors.pink[300]),
+                                color: widget.colorTop),
                             PropertyFood(
                                 name: "Sodio",
                                 valor: "1 mg",
-                                color: Colors.pink[300]),
+                                color: widget.colorTop),
                             PropertyFood(
                                 name: "Potasio",
                                 valor: "153 mg",
-                                color: Colors.pink[300]),
+                                color: widget.colorTop),
                             PropertyFood(
                                 name: "Carbohidratos",
                                 valor: "8 g",
-                                color: Colors.pink[300]),
+                                color: widget.colorTop),
                             PropertyFood(
                                 name: "Proteínas",
                                 valor: "0.7 g",
-                                color: Colors.pink[300]),
+                                color: widget.colorTop),
                           ],
                         ),
                       ],
@@ -217,7 +198,7 @@ class PropertyFood extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .headline6
-                    .copyWith(fontSize: 15, height: 1.7, color: this.color)),
+                    .copyWith(fontSize: 15, height: 1.7, color: this.color, fontWeight: FontWeight.bold)),
             Text(this.valor,
                 style: Theme.of(context)
                     .textTheme

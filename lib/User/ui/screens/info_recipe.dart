@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fun_cooking/widgets/favorite_button.dart';
+import 'package:fun_cooking/widgets/video_button.dart';
 
 class InfoRecipe extends StatefulWidget {
   final String name;
@@ -8,6 +10,7 @@ class InfoRecipe extends StatefulWidget {
   final String img;
   final Color color;
   final Color colorTop;
+  final String racion;
 
   const InfoRecipe({
     Key key,
@@ -15,6 +18,7 @@ class InfoRecipe extends StatefulWidget {
     @required this.text,
     @required this.img,
     @required this.ingredientes,
+    @required this.racion,
     this.color,
     this.colorTop,
   });
@@ -63,7 +67,7 @@ class _InfoRecipeState extends State<InfoRecipe> {
                           height: 5,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(5)),
-                            color: Colors.grey,
+                            color: widget.colorTop,
                           ),
                         ),
                         Row(
@@ -77,19 +81,10 @@ class _InfoRecipeState extends State<InfoRecipe> {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    Icon(
-                                      FontAwesomeIcons.video,
-                                      size: 14,
-                                    ),
+                                    VideoButton(),
                                     SizedBox(
-                                      width: 5,
+                                      width: 10,
                                     ),
-                                    Text("Videos",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline6
-                                            .copyWith(
-                                                fontSize: 12, height: 1.7)),
                                   ],
                                 ),
                                 SizedBox(
@@ -97,73 +92,117 @@ class _InfoRecipeState extends State<InfoRecipe> {
                                 ),
                                 Row(
                                   children: <Widget>[
-                                    Icon(
-                                      FontAwesomeIcons.solidHeart,
-                                      size: 14,
-                                    ),
+                                    FavoriteButton(),
                                     SizedBox(
                                       width: 5,
                                     ),
-                                    Text("Favoritos",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline6
-                                            .copyWith(
-                                                fontSize: 12, height: 1.7)),
+                                  
                                   ],
                                 ),
                               ],
                             ),
                           ],
                         ),
+                        Container(
+                          margin: EdgeInsets.only(top: 15, bottom: 5),
+                          color: widget.color,
+                          height: 1,
+                        ),
                         Row(
                           children: <Widget>[
                             Container(
-                              margin: EdgeInsets.only(top: 15),
                               child: Column(
                                 children: [
                                   Text("Ingredientes",
                                       style: Theme.of(context)
                                           .textTheme
                                           .headline6
-                                          .copyWith(fontSize: 15, height: 1.7)),
+                                          .copyWith(
+                                              fontSize: 15,
+                                              height: 1.7,
+                                              fontWeight: FontWeight.bold)),
                                 ],
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 20,
+                        Container(
+                          child: Row(
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.user,
+                                size: 13,
+                                color: Colors.black54,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(widget.racion,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline6
+                                      .copyWith(fontSize: 13, height: 1.7)),
+                            ],
+                          ),
                         ),
-                        Text(widget.ingredientes,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline6
-                                .copyWith(fontSize: 15, height: 1.7)),
+                        Container(
+                          margin: EdgeInsets.only(top: 10),
+                          child: Column(
+                            children: [
+                              Container(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(widget.ingredientes,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline6
+                                            .copyWith(
+                                                fontSize: 14, height: 1.7)),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(top: 10, bottom: 5),
+                                color: widget.color,
+                                height: 1,
+                              )
+                            ],
+                          ),
+                        ),
                         Row(
                           children: <Widget>[
                             Container(
-                              margin: EdgeInsets.only(top: 15),
                               child: Column(
                                 children: [
-                                  Text("Pasos de la Receta",
+                                  Text("Preparación",
                                       style: Theme.of(context)
                                           .textTheme
                                           .headline6
-                                          .copyWith(fontSize: 15, height: 1.7)),
+                                          .copyWith(
+                                              fontSize: 15,
+                                              height: 1.7,
+                                              fontWeight: FontWeight.bold)),
                                 ],
                               ),
                             ),
                           ],
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
-                        Text(widget.text,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline6
-                                .copyWith(fontSize: 13, height: 1.7)),
+                        Container(
+                          margin: EdgeInsets.only(left: 15, bottom: 5),
+                          child: Column(
+                            children: [
+                              Text(widget.text,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline6
+                                      .copyWith(fontSize: 13, height: 1.9)),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ),
