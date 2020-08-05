@@ -54,10 +54,10 @@ class _CollectionState extends State<Collection> {
                           text: "43 kcal",
                           img: "mora",
                           description:
-                              "Fragaria, llamado comúnmente fresa o frutilla, es un género de plantas rastreras "
-                              "estoloníferas de la familia Rosaceae. Agrupa unos 400 taxones descritos, de los "
-                              "cuales solo unos 20 están aceptados.​ Son cultivadas por su fruto comestible llamado "
-                              "de la misma manera, fresa o frutilla.",
+                              "Las moras son frutas o bayas que, a pesar de proceder de especies "
+                              "vegetales que son completamente diferentes, poseen aspecto similar y características "
+                              "comunes. En ocasiones, las distintas moras pueden ser confundidas e incluso obviadas. "
+                              "En total existen más de 300 especies de moras diferentes.",
                           color: Color(0xFFDAE6FC),
                           colorsecundary: Color(0xFF6899F3),
                         ),
@@ -74,10 +74,11 @@ class _CollectionState extends State<Collection> {
                           text: "42 kcal",
                           img: "leche",
                           description:
-                              "Fragaria, llamado comúnmente fresa o frutilla, es un género de plantas rastreras "
-                              "estoloníferas de la familia Rosaceae. Agrupa unos 400 taxones descritos, de los "
-                              "cuales solo unos 20 están aceptados.​ Son cultivadas por su fruto comestible llamado "
-                              "de la misma manera, fresa o frutilla.",
+                              "Es una secreción nutritiva de color blanquecino opaco producida por las células "
+                              "secretoras de las glándulas mamarias de los mamíferos, incluidos los monotremas. "
+                              "Su principal función es la de nutrir a las crías hasta que sean capaces de digerir otros alimentos, "
+                              "además de proteger su tracto gastrointestinal contra patógenos, toxinas e inflamación "
+                              "y contribuir a su salud metabólica regulando los procesos de obtención de energía. ",
                           color: Color(0xFFB6E2DC),
                           colorsecundary: Color(0xFF8AD0C7),
                         ),
@@ -94,10 +95,10 @@ class _CollectionState extends State<Collection> {
                           text: "535 kcal",
                           img: "chocolate",
                           description:
-                              "Fragaria, llamado comúnmente fresa o frutilla, es un género de plantas rastreras "
-                              "estoloníferas de la familia Rosaceae. Agrupa unos 400 taxones descritos, de los "
-                              "cuales solo unos 20 están aceptados.​ Son cultivadas por su fruto comestible llamado "
-                              "de la misma manera, fresa o frutilla.",
+                              "Es el alimento que se obtiene mezclando azúcar con dos productos que derivan "
+                              "de la manipulación de las semillas del cacao: la masa del cacao y la manteca de cacao. "
+                              "A partir de esta combinación básica se elaboran los distintos tipos de chocolate que dependen "
+                              "de la proporción entre estos elementos y de su mezcla.",
                           color: Color(0xFFE7C4B1),
                           colorsecundary: Color(0xFFD9A082),
                         ),

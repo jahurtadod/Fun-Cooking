@@ -118,18 +118,21 @@ class _RecipeState extends State<Recipe> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => InfoRecipe(
-                                      name: "Pastel des",
-                                      ingredientes: "1/2 K. Fresas \n"
-                                          "1/2 Tza. Leche\n",
+                                      name: "Pastel de Chocolate",
+                                      ingredientes: "230 g de harina de trigo \n"
+                                          "3 huevos\n"
+                                          "30 mL de leche\n"
+                                          "150 g de chocolate amargo\n",
                                       text:
-                                          "1. Lavar primero muy bien las fresas, retirarle los tallos y proceder a cortarlas en mitades. \n"
-                                          "2. Colocarlas en la Licuadora, añadir el Agua, la Leche y el Azúcar. \n"
-                                          "3. Servir de inmediato en vaso de vidrio. \n"
-                                          "4. Disfrutar el jugo acompañado de galletas u otro alimento. \n",
+                                          "1. Precalienta el horno a 180 ºC. \n"
+                                          "2. Disuelve la cocoa en el agua hirviendo. Enfría ligeramente. \n"
+                                          "3. Mezcla la harina con la sal, el bicarbonato y los polvos para hornear. \n"
+                                          "4. Derrite a baño María los chocolates por separado, añade dos cucharadas de mantequilla y combina perfectamente. \n"
+                                          "5. Bate la mantequilla, agreag el azúcar y la cocoa hasta integrar. Pásalos a una manga. \n",
                                       img: "recipe1",
                                       color: Color(0xFFE7C4B1),
                                       colorTop: Color(0xFFE7C4B1),
-                                      racion: "5 raciones",
+                                      racion: "8 raciones",
                                     ),
                                   ),
                                 );
@@ -148,17 +151,17 @@ class _RecipeState extends State<Recipe> {
                                   MaterialPageRoute(
                                     builder: (context) => InfoRecipe(
                                       name: "Batido de moras",
-                                      ingredientes: "1/2 K. Fresas \n"
+                                      ingredientes: "1/2 K. Moras \n"
                                           "1/2 Tza. Leche\n",
                                       text:
-                                          "1. Lavar primero muy bien las fresas, retirarle los tallos y proceder a cortarlas en mitades. \n"
+                                          "1. Lavar primero muy bien las moras, retirarle los tallos y proceder a cortarlas en mitades. \n"
                                           "2. Colocarlas en la Licuadora, añadir el Agua, la Leche y el Azúcar. \n"
                                           "3. Servir de inmediato en vaso de vidrio. \n"
                                           "4. Disfrutar el jugo acompañado de galletas u otro alimento. \n",
                                       img: "recipe2",
                                       color: Color(0xFFB5CCF8),
                                       colorTop: Color(0xFFB5CCF8),
-                                      racion: "5 raciones",
+                                      racion: "3 raciones",
                                     ),
                                   ),
                                 );
@@ -177,17 +180,24 @@ class _RecipeState extends State<Recipe> {
                                   MaterialPageRoute(
                                     builder: (context) => InfoRecipe(
                                       name: "Donas",
-                                      ingredientes: "1/2 K. Fresas \n"
-                                          "1/2 Tza. Leche\n",
+                                      ingredientes: "1 Kg Harina\n"
+                                          "4 huevos \n"
+                                          "200 ml de leche tibia\n"
+                                          "260 g de azúcar \n"
+                                          "80 g de mantequilla \n"
+                                          "1 cucharadita de vainilla\n",
                                       text:
-                                          "1. Lavar primero muy bien las fresas, retirarle los tallos y proceder a cortarlas en mitades. \n"
-                                          "2. Colocarlas en la Licuadora, añadir el Agua, la Leche y el Azúcar. \n"
-                                          "3. Servir de inmediato en vaso de vidrio. \n"
-                                          "4. Disfrutar el jugo acompañado de galletas u otro alimento. \n",
+                                          "1. colocar la harina en un tazón amplio, formar un volcán con ella y añadir en el centro la leche y la levadura. \n"
+                                          "2. Hecho esto, derrite la mantequilla en el microondas y mézclala con la harina y el resto de los ingredientes, es decir, incorpora los huevos, el azúcar y la vainilla. \n"
+                                          "3. Cuando la masa de las donas no se quede pegada en tus manos, haz una bola con ella. \n"
+                                          "4. Pasado este tiempo, la masa tiene que haber duplicado su volumen.  \n"
+                                          "5. Con la masa ya estirada, corta las donas con el diámetro deseado y resérvalas sobre una bandeja forrada con papel vegetal o sulfurizado. \n"
+                                          "6. Dejarlas reposar durante 10 minutos más para que aumenten su tamaño. \n"
+                                          "7. Ahora tienes dos opciones, puedes hacer donas fritas o al horno.  \n",
                                       img: "recipe3",
                                       color: Color(0xFFFFE3E5),
                                       colorTop: Color(0xFFFFE3E5),
-                                      racion: "5 raciones",
+                                      racion: "6 raciones",
                                     ),
                                   ),
                                 );
